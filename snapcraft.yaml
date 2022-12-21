@@ -1,0 +1,19 @@
+name: test-mail
+version: '1.0'
+summary: A send mail tool for test.
+description: |
+  Send Mail From gmail.google to your <email.address>
+confinement: devmode
+base: core18
+parts:
+  test-mail:
+    plugin: go
+    go-importpath: github.com/Guaderxx/mail
+    source: https://github.com/Guaderxx/mail
+    source-type: git
+    build-packages:
+      - gcc
+
+apps:
+  test-mail:
+    command: bin/test-mail
